@@ -1,5 +1,7 @@
 # svg-react-transformer-loader
 
+[![Build Status](https://travis-ci.org/mapbox/svg-react-transformer-loader.svg?branch=master)](https://travis-ci.org/mapbox/svg-react-transformer-loader)
+
 Webpack loader to transform SVG files into React components.
 
 Runs SVG files through the `svgToComponentModule` function of [svg-react-transformer](https://github.com/mapbox/svg-react-transformer).
