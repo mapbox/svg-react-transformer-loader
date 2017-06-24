@@ -17,12 +17,12 @@ describe('svgReactTransformerLoader', () => {
     };
     transformResult = Promise.resolve('mockResult');
     jest.spyOn(loaderUtils, 'getOptions').mockReturnValue('mockOptions');
-    jest.spyOn(svgReactTransformer, 'svgToComponentModule').mockReturnValue(transformResult);
+    jest.spyOn(svgReactTransformer, 'toComponentModule').mockReturnValue(transformResult);
   });
 
   afterEach(() => {
     loaderUtils.getOptions.mockRestore();
-    svgReactTransformer.svgToComponentModule.mockRestore();
+    svgReactTransformer.toComponentModule.mockRestore();
   });
 
   test('registers as async', () => {
@@ -38,10 +38,10 @@ describe('svgReactTransformerLoader', () => {
     });
   });
 
-  test('passes arguments to svgToComponentModule', () => {
+  test('passes arguments to toComponentModule', () => {
     return mockContext.loader('mockSvg').then(() => {
-      expect(svgReactTransformer.svgToComponentModule).toHaveBeenCalledTimes(1);
-      expect(svgReactTransformer.svgToComponentModule).toHaveBeenCalledWith('mockSvg', 'mockOptions');
+      expect(svgReactTransformer.toComponentModule).toHaveBeenCalledTimes(1);
+      expect(svgReactTransformer.toComponentModule).toHaveBeenCalledWith('mockSvg', 'mockOptions');
     });
   });
 
@@ -53,7 +53,7 @@ describe('svgReactTransformerLoader', () => {
   });
 
   test('passes errors to the callback', () => {
-    svgReactTransformer.svgToComponentModule.mockReturnValue(Promise.reject('mockError'));
+    svgReactTransformer.toComponentModule.mockReturnValue(Promise.reject('mockError'));
     return mockContext.loader('mockSvg').then(() => {
       expect(callback).toHaveBeenCalledTimes(1);
       expect(callback).toHaveBeenCalledWith('mockError');
