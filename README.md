@@ -1,4 +1,4 @@
-# svg-react-transformer-loader
+# @mapbox/svg-react-transformer-loader
 
 [![Build Status](https://travis-ci.org/mapbox/svg-react-transformer-loader.svg?branch=master)](https://travis-ci.org/mapbox/svg-react-transformer-loader)
 
