@@ -8,4 +8,6 @@ Runs SVG files through the `toComponentModule` function of [svg-react-transforme
 
 You can pass all of [the options from `toComponentModule`](https://github.com/mapbox/svg-react-transformer#tocomponentmodule) (e.g. SVGO plugins, a component template).
 
-**The output of the default template includes JSX and ES2015 (`class`), so you should chain this loader with the [`babel-loader`](https://github.com/babel/babel-loader).**
+The output of the default template includes JSX and ES2015 (`class`).
+By default, the output of this loader is precompiled with Babel.
+You can bypass this step (and set up your own compilation) by passing the option `precompile: false`.
