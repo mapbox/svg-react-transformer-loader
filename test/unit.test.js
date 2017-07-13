@@ -35,6 +35,8 @@ describe('svgReactTransformerLoader', () => {
     callback = jest.fn();
     mockContext = {
       async: jest.fn(() => callback),
+      context: '/foo',
+      resourcePath: '/foo/bar-baz.svg',
       loader
     };
     mockOptions = {};
@@ -63,6 +65,7 @@ describe('svgReactTransformerLoader', () => {
       expect(
         svgReactTransformer.toComponentModule
       ).toHaveBeenCalledWith('mockSvg', {
+        name: 'BarBaz',
         precompile: true
       });
     });

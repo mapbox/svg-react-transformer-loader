@@ -15,16 +15,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== \\"function
 
 var React = require(\\"react\\");
 
-var SvgComponent = function (_React$PureComponent) {
-  _inherits(SvgComponent, _React$PureComponent);
+var Three = function (_React$PureComponent) {
+  _inherits(Three, _React$PureComponent);
 
-  function SvgComponent() {
-    _classCallCheck(this, SvgComponent);
+  function Three() {
+    _classCallCheck(this, Three);
 
-    return _possibleConstructorReturn(this, (SvgComponent.__proto__ || Object.getPrototypeOf(SvgComponent)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Three.__proto__ || Object.getPrototypeOf(Three)).apply(this, arguments));
   }
 
-  _createClass(SvgComponent, [{
+  _createClass(Three, [{
     key: \\"render\\",
     value: function render() {
       return React.createElement(
@@ -35,17 +35,17 @@ var SvgComponent = function (_React$PureComponent) {
     }
   }]);
 
-  return SvgComponent;
+  return Three;
 }(React.PureComponent);
 
-module.exports = SvgComponent;"
+module.exports = Three;"
 `;
 
 exports[`svgReactTransformerLoader integration uncompiled 1`] = `
 "\\"use strict\\";
 const React = require(\\"react\\");
 
-class SvgComponent extends React.PureComponent {
+class FiveSixSeven extends React.PureComponent {
   render() {
     return (
       <svg {...this.props} viewBox=\\"0 0 18 18\\">
@@ -55,6 +55,6 @@ class SvgComponent extends React.PureComponent {
   }
 }
 
-module.exports = SvgComponent;
+module.exports = FiveSixSeven;
 "
 `;

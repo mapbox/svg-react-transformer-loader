@@ -22,6 +22,8 @@ describe('svgReactTransformerLoader integration', () => {
     loaderUtils.getOptions.mockReturnValue(null);
     const callback = jest.fn();
     const context = {
+      context: '/one/two',
+      resourcePath: '/one/two/three.svg',
       async: () => callback
     };
 
@@ -36,6 +38,8 @@ describe('svgReactTransformerLoader integration', () => {
     loaderUtils.getOptions.mockReturnValue({ precompile: false });
     const callback = jest.fn();
     const context = {
+      context: '/four',
+      resourcePath: '/four/five-six_seven.svg',
       async: () => callback
     };
 
