@@ -3,9 +3,6 @@
 const loader = require('../index.js');
 const loaderUtils = require('loader-utils');
 const svgReactTransformer = require('@mapbox/svg-react-transformer');
-const babel = require('babel-core');
-const babelPresetEs2015 = require('babel-preset-es2015');
-const babelPresetReact = require('babel-preset-react');
 
 jest.mock('@mapbox/svg-react-transformer', () => {
   return {
@@ -16,12 +13,6 @@ jest.mock('@mapbox/svg-react-transformer', () => {
 jest.mock('loader-utils', () => {
   return {
     getOptions: jest.fn()
-  };
-});
-
-jest.mock('babel-core', () => {
-  return {
-    transform: jest.fn()
   };
 });
 
@@ -43,7 +34,6 @@ describe('svgReactTransformerLoader', () => {
     loaderUtils.getOptions.mockReturnValue(mockOptions);
     transformResult = Promise.resolve('mockResult');
     svgReactTransformer.toComponentModule.mockReturnValue(transformResult);
-    babel.transform.mockReturnValue({ code: 'mockResultCompiled' });
   });
 
   test('registers as async', () => {
@@ -71,18 +61,16 @@ describe('svgReactTransformerLoader', () => {
     });
   });
 
-  test('calls the callback with the result', () => {
-    return mockContext.loader('mockSvg').then(() => {
-      expect(callback).toHaveBeenCalledTimes(1);
-      expect(callback).toHaveBeenCalledWith(null, 'mockResultCompiled');
-    });
-  });
-
-  test('precompile: false does not compile result', () => {
+  test('precompile: false', () => {
     loaderUtils.getOptions.mockReturnValue({ precompile: false });
     return mockContext.loader('mockSvg').then(() => {
-      expect(callback).toHaveBeenCalledTimes(1);
-      expect(callback).toHaveBeenCalledWith(null, 'mockResult');
+      expect(svgReactTransformer.toComponentModule).toHaveBeenCalledTimes(1);
+      expect(
+        svgReactTransformer.toComponentModule
+      ).toHaveBeenCalledWith('mockSvg', {
+        name: 'BarBaz',
+        precompile: false
+      });
     });
   });
 

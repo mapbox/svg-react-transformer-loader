@@ -21,12 +21,6 @@ module.exports = function(source) {
   return svgReactTransformer
     .toComponentModule(source, options)
     .then(result => {
-      if (options.precompile) {
-        result = babel.transform(result, {
-          presets: [babelPresetEs2015, babelPresetReact]
-        }).code;
-      }
       callback(null, result);
-    })
-    .catch(callback);
+    }, callback);
 };
