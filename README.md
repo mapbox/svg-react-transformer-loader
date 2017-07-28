@@ -4,10 +4,22 @@
 
 Webpack loader to transform SVG files into React components.
 
-Runs SVG files through the `toComponentModule` function of [svg-react-transformer](https://github.com/mapbox/svg-react-transformer).
+Runs SVG files through the `toComponentModule` function of [svg-react-transformer].
+Please read the [svg-react-transformer] documentation for more details.
 
-You can pass all of [the options from `toComponentModule`](https://github.com/mapbox/svg-react-transformer#tocomponentmodule) (e.g. SVGO plugins, a component template).
+## Installation
 
-The output of the default template includes JSX and ES2015 (`class`).
+```
+npm install @mapbox/svg-react-transformer-loader
+```
+
+## Usage
+
+Follow the instructions for using [Webpack loaders](https://webpack.js.org/concepts/loaders/).
+
+**You can pass all of [the options from svg-react-transformer's `toComponentModule` function](https://github.com/mapbox/svg-react-transformer#tocomponentmodule)** (e.g. SVGO plugins, a component template).
+
 By default, the output of this loader is precompiled with Babel.
-You can bypass this step (and set up your own compilation) by passing the option `precompile: false`.
+You can bypass this step (and use your own compilation) by passing the option `precompile: false`.
+
+[svg-react-transformer]: https://github.com/mapbox/svg-react-transformer
