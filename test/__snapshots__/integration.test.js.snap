@@ -29,7 +29,7 @@ var Three = function (_React$PureComponent) {
     value: function render() {
       return React.createElement(
         \\"svg\\",
-        _extends({}, this.props, { viewBox: \\"0 0 18 18\\" }),
+        _extends({ viewBox: \\"0 0 18 18\\" }, this.props),
         React.createElement(\\"path\\", { d: \\"M7 4l1.6 4H5.5S4.1 6 3 6h-.8L3 8l1 3h4.6L7 15h2l3.2-4H14c1 0 2-.7 2-1.5S15 8 14 8h-1.8L9 4H7z\\" })
       );
     }
@@ -48,7 +48,7 @@ const React = require(\\"react\\");
 class FiveSixSeven extends React.PureComponent {
   render() {
     return (
-      <svg {...this.props} viewBox=\\"0 0 18 18\\">
+      <svg viewBox=\\"0 0 18 18\\" {...this.props}>
         <path d=\\"M7 4l1.6 4H5.5S4.1 6 3 6h-.8L3 8l1 3h4.6L7 15h2l3.2-4H14c1 0 2-.7 2-1.5S15 8 14 8h-1.8L9 4H7z\\" />
       </svg>
     );

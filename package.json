@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/svg-react-transformer-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack loader to transform SVG files into React components",
   "main": "index.js",
   "scripts": {
@@ -30,17 +30,17 @@
   },
   "homepage": "https://github.com/mapbox/svg-react-transformer-loader#readme",
   "dependencies": {
-    "@mapbox/svg-react-transformer": "^0.7.0",
+    "@mapbox/svg-react-transformer": "^1.0.1",
     "loader-utils": "^1.1.0",
     "pascal-case": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^4.3.0",
+    "eslint": "^4.7.1",
     "eslint-plugin-node": "^5.1.1",
     "husky": "^0.14.3",
-    "jest": "^20.0.4",
-    "lint-staged": "^4.0.2",
-    "prettier": "^1.5.3"
+    "jest": "^21.1.0",
+    "lint-staged": "^4.2.1",
+    "prettier": "^1.7.0"
   },
   "jest": {
     "testEnvironment": "node",
